@@ -1,4 +1,8 @@
-$("#openEmailTab").on("click", switchTab)
+$("#openEmailTab").on("click", ()=>{
+  switchTab()
+  logView("pop_click")
+  logView("email_view")
+})
 
 const emailInput = $('#inputEmail');
 const userCreateButton = $('#userCreate');
@@ -76,6 +80,7 @@ function createUser(){
       // Получаем данные из ответа
       const responseData = await response.json();
       console.log('Success:', responseData);
+      logView("is_lead")
     } catch (error) {
       console.error('Error:', error);
     }
@@ -110,4 +115,7 @@ userCreateButton.on('click', ()=>{
   createUser()
   switchTab()
   startCountdown(600)
+  logView("email_click")
+  logView("paywall_view")
+
 });

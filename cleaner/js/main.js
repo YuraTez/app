@@ -16,6 +16,9 @@ if(getCookie("userId")){
   }
 }
 
+function logView(data) {
+  amplitude.logEvent(data);
+}
 
 function switchTab() {
   const $currentTab = $('.tab__page.show');
@@ -33,7 +36,7 @@ function switchTab() {
 
 $(".open-animation-tab").on("click", function(){
   switchTab()
-
+  logView("scan_start_click")
   animateLoading();
   startLottiAnimation("#lottiImgList" , "list-img.json" , true)
 })
@@ -69,6 +72,7 @@ function animateLoading() {
 
       setTimeout(()=>{
         $(".popup-scan").addClass("active");
+        logView("scan_finish_view")
       },500)
 
     }

@@ -44,7 +44,7 @@ function postData(product){
     "product_price_id": "625915e8-9830-45b8-b75e-5953fd589c9e",
     "customer_email": getCookie("userEmail"),
   };
-/*  amplitude.logEvent('frame_loading_started');*/
+  amplitude.logEvent('frame_loading_started');
 
   fetch(url, {
     method: 'POST',
@@ -116,9 +116,9 @@ function postData(product){
       const  formPay = PaymentFormSdk.init(initData);
 
       formPay.on('mounted', e => {
-       /* amplitude.logEvent('frame_loading_finished');*/
+        amplitude.logEvent('frame_loading_finished');
         if(e.data.entity === "applebtn"){
-         /* amplitude.logEvent('apple_pay_intent');*/
+          amplitude.logEvent('apple_pay_intent');
         }
       })
 
@@ -142,17 +142,17 @@ function postData(product){
           const field = data.cardForm.fields[key];
 
           if(key === "cardNumber" && field.isValid && cardNumber){
-           /* amplitude.logEvent('card_field_fill');*/
+            amplitude.logEvent('card_field_fill');
             return  cardNumber = false
           }
 
           if(key === "cardExpiryDate" && field.isValid && cardExpiryDate){
-            /*amplitude.logEvent('expire_fill');*/
+            amplitude.logEvent('expire_fill');
             return  cardExpiryDate = false
           }
 
           if(key === "cardCvv" && field.isValid && cardCvv){
-           /* amplitude.logEvent('cvv_fill');*/
+            amplitude.logEvent('cvv_fill');
             return  cardCvv = false
           }
 
@@ -165,21 +165,21 @@ function postData(product){
           $(".popup-success").addClass("active")
 
           if(e.data.entity === "applebtn"){
-           /* amplitude.logEvent('apple_pay_success');*/
+            amplitude.logEvent('apple_pay_success');
           }else{
-           /* amplitude.logEvent('purchase_success');*/
+            amplitude.logEvent('purchase_success');
           }
 
-          /*amplitude.logEvent('success_view');*/
+          amplitude.logEvent('success_view');
         },1000)
       })
 
       formPay.on('fail', e => {
         $(".popup-error").addClass("active")
         if(e.data.entity === "applebtn"){
-         /* amplitude.logEvent('apple_pay_fail');*/
+          amplitude.logEvent('apple_pay_fail');
         }else{
-         /* amplitude.logEvent('purchase_fail');*/
+          amplitude.logEvent('purchase_fail');
         }
       })
     })
@@ -188,11 +188,13 @@ function postData(product){
     });
 }
 
-$(document).ready(function() {
-  $('.tariff__item-input').on('click', function() {
-    const value = $(this).val();
-    postData(value)
-  });
+$('.tariff__item-input').on('click', function() {
+  const value = $(this).val();
+  const price = $(this).next().find(".tariff__period-price-new").text();
+  const event = $(this).attr("data-price");
+  amplitude.logEvent(event);
+  postData(value)
+  $("#payWeak").text(price)
 });
 
 
@@ -202,17 +204,7 @@ const payButton = document.querySelectorAll(".pay-button");
 payButton.forEach((el)=>{
   el.addEventListener('click', function (){
     postData("58f1f180-d8c5-489e-b5a6-b6508e8d43ae")
-    /*if(this.classList.contains("btn-error-pay")){
-      $(".tab").removeClass("active show");
-      setTimeout(function (){
-        $(".tab-pay").addClass("active show")
-      },1000)
-    }
 
-    postData()
-    setTimeout(()=>{
-      disableBtn(this.closest(".tab-btn"))
-    },0)*/
   });
 })
 
