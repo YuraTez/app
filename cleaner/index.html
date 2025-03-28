@@ -428,7 +428,7 @@
                     </div>
                 </footer>
             </div>
-            <div class="tab__page tab__animation " data-tab="2">
+            <div class="tab__page tab__animation" data-tab="2">
                 <div class="tab__container">
                     <div class="animation-gallery" id="lottiImgList"></div>
                     <div class="analyzing">
@@ -564,7 +564,7 @@
                             <div class="email-domains__item">@hotmail.com</div>
                         </div>
                     </div>
-                    <div class="btn disable" id="userCreate">Continue</div>
+                    <div class="btn disable pay-button" id="userCreate">Continue</div>
                     <div class="meta">
                         <div class="meta__label">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -609,7 +609,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tab__page tab-pay" data-tab="4">
+            <div class="tab__page tab__pay" data-tab="4">
                 <div class="tab__container">
                     <div class="title">
                         Safe checkout
@@ -617,7 +617,66 @@
                     <div class="time">
                         <div class="time__text">Personal offer expires in</div>
                         <div class="time__content">
-                            <span id="minutes">10</span> : <span id="seconds">10</span>
+                            <span id="minutes">10</span> : <span id="seconds">00</span>
+                        </div>
+                    </div>
+                    <div class="tariffs">
+                        <div class="tariff__item">
+                            <input type="radio" class="tariff__item-input" name="tariff" value="58f1f180-d8c5-489e-b5a6-b6508e8d43ae" checked id="tariff_1">
+                            <label for="tariff_1" class="tariff__item-content">
+                                <div class="tariff__period">
+                                    <div class="tariff__period-data">1 week</div>
+                                    <div class="tariff__period-price">
+                                        <div class="tariff__period-price-old">$9.98</div>
+                                        <div class="tariff__period-price-new">$4.99</div>
+                                    </div>
+                                </div>
+                                <div class="tariff__day">
+                                    <div class="tariff__sale">$1.42</div>
+                                    <div class="tariff__day-cost">
+                                        <div class="tariff__day-cost-content"><span>$</span> 0 <span>71</span></div>
+                                        <div class="tariff__day-cost-text">per day</div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="tariff__item">
+                            <input type="radio" class="tariff__item-input" name="tariff" value="76fe1e82-6f8c-4b78-8d48-508a778edc21" id="tariff_2">
+                            <label for="tariff_2" class="tariff__item-content">
+                                <div class="tariff__period">
+                                    <div class="tariff__period-data">1 month</div>
+                                    <div class="tariff__period-price">
+                                        <div class="tariff__period-price-old">$39.99</div>
+                                        <div class="tariff__period-price-new">$13.99</div>
+                                    </div>
+                                </div>
+                                <div class="tariff__day">
+                                    <div class="tariff__sale">$1.31</div>
+                                    <div class="tariff__day-cost">
+                                        <div class="tariff__day-cost-content"><span>$</span> 0 <span>46</span></div>
+                                        <div class="tariff__day-cost-text">per day</div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="tariff__item">
+                            <input type="radio" class="tariff__item-input" name="tariff" value="47304e68-d055-4c02-b123-cd2e249d045f" id="tariff_3">
+                            <label for="tariff_3" class="tariff__item-content">
+                                <div class="tariff__period">
+                                    <div class="tariff__period-data">3 month</div>
+                                    <div class="tariff__period-price">
+                                        <div class="tariff__period-price-old">$59.99</div>
+                                        <div class="tariff__period-price-new">$20.99</div>
+                                    </div>
+                                </div>
+                                <div class="tariff__day">
+                                    <div class="tariff__sale">0.65</div>
+                                    <div class="tariff__day-cost">
+                                        <div class="tariff__day-cost-content"><span>$</span>0 <span>23</span></div>
+                                        <div class="tariff__day-cost-text">per day</div>
+                                    </div>
+                                </div>
+                            </label>
                         </div>
                     </div>
                     <div class="features">
@@ -679,7 +738,39 @@
                        </div>
                         <p class="pay-card__description">Money-Back Guarantee</p>
                     </div>
+                    <div id="solid-payment-form-container"></div>
+                    <div class="money-back">
+                        <div class="title">Money-Back Guarantee</div>
+                        <div class="money-back__description">
+                            We are confident in the quality of our app – tens of thousands of users around the world
+                            have already optimized their photo storage with the NeatUp Cleaner. We are prepared to
+                            refund your money if you encountered technical issues that hindered the proper use of the
+                            application.
+                        </div>
+                    </div>
+                    <div class="pay-description">
+                        You will be automatically charged <span id="payWeak">$13.99</span> after the payment confirmation. The subscription will
+                        then be auto-renewed monthly after a 1-week intro offer at the full price of $39.99. Payments
+                        are charged in USD. To learn more, visit our Terms of Use or Privacy Policy.
+                    </div>
                 </div>
+            </div>
+            <div class="tab__page tab__download" data-tab="5">
+                <div class="tab__container">
+                    <div class="tab__download-title">Download the app <br>
+                        to continue</div>
+                    <div class="tab__download-content">
+                        <div class="tab__download-content-logo">
+                            <img src="assets/img/fi.svg" alt="logo">
+                        </div>
+                        <div class="tab__download-content-title">
+                            NeatUp Cleaner
+                        </div>
+                    </div>
+
+                    <a href="https://neatup-cleaner.onelink.me/M0wl/5turn8zi" class="btn btn--end">Download</a>
+                </div>
+
             </div>
         </div>
     </div>
@@ -751,7 +842,7 @@
         </div>
         <div class="title title-secondary">Your payment was successful!</div>
         <p class="popup-text">Thank you!</p>
-        <div class="btn">Proceed to My Plan</div>
+        <div class="btn btn-popup">Proceed to My Plan</div>
     </div>
 </div>
 <div class="popup popup-error">
@@ -770,7 +861,7 @@
         </div>
         <div class="title title-secondary">Payment Failed</div>
         <p class="popup-text">Please try again</p>
-        <div class="btn">Try again</div>
+        <div class="btn btn-popup">Try again</div>
     </div>
 </div>
 
@@ -784,6 +875,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
 <script src="js/main.js"></script>
 <script src="js/user-create.js"></script>
-<script src="js/pay.js"></script>
+<script src="js/payment.js"></script>
 </body>
 </html>

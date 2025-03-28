@@ -48,8 +48,8 @@ function createUser(){
   const link = new URL(window.location.href);
   const clickId = link.searchParams.get('click_id') !== null ? link.searchParams.get('click_id') : generateUUID(10);
 
-/*  setCookie('userId', clickId, 90);
-  setCookie('userEmail', emailInput.val(), 90);*/
+  setCookie('userId', clickId, 90);
+  setCookie('userEmail', emailInput.val(), 90);
 
   const url = "https://rocknlabs.com/api/user/create";
   const data = {

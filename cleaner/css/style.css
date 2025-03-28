@@ -26,6 +26,10 @@
   scroll-behavior: smooth;
 }
 
+input[type="radio"] {
+  display: none;
+}
+
 img {
   display: block;
 }
@@ -995,8 +999,8 @@ body {
   cursor: pointer;
 }
 
-.tab-pay{
-  padding-top: 28px;
+.tab__pay{
+  padding: 28px 0 70px;
 }
 
 .time{
@@ -1093,3 +1097,227 @@ body {
   letter-spacing: -0.01px;
   margin-top: 16px;
 }
+
+.money-back{
+  border-radius: 20px;
+  border: 1px solid var(--color-text-white);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.50) 100%), url("../assets/img/guarantee.svg") no-repeat right bottom;");
+  box-shadow: 0px 2px 8px 0px rgba(66, 91, 113, 0.15);
+  padding: 24px 16px;
+}
+
+.money-back .title{
+  margin-bottom: 16px;
+}
+
+.money-back__description{
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.01px;
+}
+
+.tariffs{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 28px 0
+}
+
+.tariff__item{
+  position: relative;
+  width: 100%;
+}
+
+.tariff__item-content{
+  position: relative;
+}
+
+.tariff__item-content{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  align-items: center;
+  border-radius: 20px;
+  border: 1px solid var(--color-text-white);
+  outline: 1px solid transparent;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.50) 100%);
+  box-shadow: 0px 2px 8px 0px rgba(66, 91, 113, 0.15);
+  padding: 18px 12px 18px 48px;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.tariff__item-content:before{
+  position: absolute;
+  content: "";
+  width: 24px;
+  height: 24px;
+  left: 12px;
+  bottom: 30px;
+  background: url("../assets/img/checkmark.svg") no-repeat center center;
+}
+
+.tariff__item-content:after{
+  position: absolute;
+  content: "";
+  width: 24px;
+  height: 24px;
+  left: 12px;
+  bottom: 30px;
+  background: url("../assets/img/checkmark-check.svg") no-repeat center center;
+  transition: .3s;
+  opacity: 0;
+}
+
+.tariff__item-input:checked + .tariff__item-content:after{
+  opacity: 1;
+}
+
+.tariff__item-input:checked + .tariff__item-content{
+  border: 1px solid var(  --color-basic-blue-gradient);
+  outline: 1px solid var(  --color-basic-blue-gradient);
+}
+
+.tariff__period{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tariff__period-data{
+  color: #000;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.073px;
+  text-transform: uppercase;
+}
+
+.tariff__period-price{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tariff__period-price-old{
+  color: var(--color-text-secondary);
+  font-size: 15px;
+  text-decoration-line: line-through;;
+}
+
+.tariff__period-price-new{
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.tariff__day{
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.tariff__sale{
+  position: relative;
+  font-size: 15px;
+}
+
+.tariff__sale:before{
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #FF3636;
+}
+
+.tariff__day-cost{
+  position: relative;
+  width: 89px;
+}
+
+.tariff__day-cost-content{
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 42px;
+  opacity: 0.7;
+  transition: .3s;
+}
+
+.tariff__item-input:checked + .tariff__item-content .tariff__day-cost-content{
+  opacity: 1;
+}
+
+.tariff__day-cost-content span{
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.01px;
+}
+
+.tariff__day-cost-text{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.01px;
+}
+
+#solid-payment-form-container{
+  min-height: 260px;
+  margin: 28px 0;
+}
+
+#solid-payment-form-container iframe{
+  width: 100%;
+}
+
+.tab__download{
+  position: relative;
+  padding-top: 26px;
+}
+
+.tab__download-title{
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 34px;
+  letter-spacing: 0.106px;
+  text-align: center;
+}
+
+.tab__download-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 70px;
+}
+
+.tab__download-content-logo{
+  width: 94px;
+}
+
+.tab__download-content-logo img{
+  width: 100%;
+}
+
+.btn--end{
+  position: fixed;
+  width: calc(100% - 48px);
+  left: 24px;
+  bottom: 40px;
+}
+
+
+
+
