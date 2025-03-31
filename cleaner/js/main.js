@@ -21,6 +21,8 @@ function logView(data) {
 }
 
 function switchTab() {
+  window.scrollTo(0, 0);
+
   const $currentTab = $('.tab__page.show');
 
   const currentIndex = $currentTab.data('tab');
