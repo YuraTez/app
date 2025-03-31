@@ -755,6 +755,7 @@ body {
 }
 
 .animation-gallery{
+  height: 55vh;
   margin: 8px 0 28px;
 }
 
@@ -1155,8 +1156,8 @@ body {
   content: "";
   width: 24px;
   height: 24px;
+  top: 29px;
   left: 12px;
-  bottom: 30px;
   background: url("../assets/img/checkmark.svg") no-repeat center center;
 }
 
@@ -1165,8 +1166,8 @@ body {
   content: "";
   width: 24px;
   height: 24px;
+  top: 29px;
   left: 12px;
-  bottom: 30px;
   background: url("../assets/img/checkmark-check.svg") no-repeat center center;
   transition: .3s;
   opacity: 0;
@@ -1329,5 +1330,69 @@ body {
   letter-spacing: -0.01px;
 }
 
+.tab__upsale{
+  padding-top: 34px;
+}
 
+.title span{
+  background: linear-gradient(180deg, #5890FF 0%, #3B52FF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
+.tariff__title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.tariff__title-text{
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.073px;
+  max-width: 151px;
+}
+
+.tariff__title .tariff__period-price {
+  flex-direction: column;
+  gap: 8px;
+}
+
+.text-uppercase{
+  text-transform: uppercase;
+}
+
+.tariff__item-content--column{
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.tariff__description{
+  display: flex;
+  gap: 12px;
+  width: calc(100% + 36px);
+  margin-left: -36px;
+}
+
+.tariff__description-cover{
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  box-shadow: 0px 2px 8px 0px rgba(66, 91, 113, 0.15);
+  border-radius: 13px;
+  overflow: hidden;
+}
+
+.tariff__description-cover img{
+   width: 100%;
+}
+
+.tariff__description-text{
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.01px;
+}
