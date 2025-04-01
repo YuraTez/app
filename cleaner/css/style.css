@@ -1156,6 +1156,28 @@ body {
   transition: .3s;
 }
 
+.tariff__item-popular .tariff__item-content{
+  padding-top: 46px;
+}
+
+.tariff__item-popular-content{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  padding: 4px;
+  color: var(--color-text-white);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #5890FF 0%, #3B52FF 100%);
+}
+
 .tariff__item-content:before{
   position: absolute;
   content: "";
@@ -1176,6 +1198,11 @@ body {
   background: url("../assets/img/checkmark-check.svg") no-repeat center center;
   transition: .3s;
   opacity: 0;
+}
+
+.tariff__item-popular .tariff__item-content:before,
+.tariff__item-popular .tariff__item-content:after{
+  top: 55px;
 }
 
 .tariff__item-input:checked + .tariff__item-content:after{
@@ -1420,4 +1447,35 @@ body {
 
 #apple-pay{
   border-radius: 100px;
+}
+
+.loader-container {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-basic-bg);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loader-container.active{
+  display: flex;
+}
+
+.loader {
+  border: 4px solid #ffff;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

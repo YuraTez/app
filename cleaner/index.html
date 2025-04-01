@@ -14,7 +14,7 @@
     <!-- Добавляем тему по умолчанию из CDN -->
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"/>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v2">
     <script type="text/javascript">
       (function (m, e, t, r, i, k, a) {
         m[i] = m[i] || function () {
@@ -621,9 +621,25 @@
                         </div>
                     </div>
                     <div class="tariffs">
-                        <div class="tariff__item">
+                        <div class="tariff__item tariff__item-popular">
                             <input type="radio" class="tariff__item-input tariff__item-pay" name="tariff" value="58f1f180-d8c5-489e-b5a6-b6508e8d43ae" checked id="tariff_1" data-price="plan_changed_1w">
                             <label for="tariff_1" class="tariff__item-content">
+                                <div class="tariff__item-popular-content">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10 18.3333C13.4312 18.3333 16.25 15.6142 16.25 12.1242C16.25 11.2675 16.2063 10.3492 15.7312 8.92166C15.2563 7.49416 15.1608 7.31 14.6587 6.42833C14.4442 8.22708 13.2963 8.97708 13.0046 9.20125C13.0046 8.96791 12.3104 6.39 11.2575 4.84708C10.2237 3.33333 8.81792 2.34041 7.99375 1.66666C7.99375 2.94583 7.63417 4.8475 7.11875 5.81666C6.60375 6.78541 6.50708 6.82083 5.86333 7.54166C5.21958 8.2625 4.92458 8.48541 4.38625 9.36041C3.84792 10.2354 3.75 11.4008 3.75 12.2575C3.75 15.7475 6.56875 18.3333 10 18.3333Z" fill="url(#paint0_linear_52_1714)" stroke="url(#paint1_linear_52_1714)" stroke-width="2" stroke-linejoin="round"/>
+                                        <defs>
+                                            <linearGradient id="paint0_linear_52_1714" x1="10" y1="1.66666" x2="10" y2="18.3333" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#FFC227"/>
+                                                <stop offset="1" stop-color="#FF9900"/>
+                                            </linearGradient>
+                                            <linearGradient id="paint1_linear_52_1714" x1="10" y1="1.66666" x2="10" y2="18.3333" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#FFC227"/>
+                                                <stop offset="1" stop-color="#FF9900"/>
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    Most popular
+                                </div>
                                 <div class="tariff__period">
                                     <div class="tariff__period-data">1 week</div>
                                     <div class="tariff__period-price">
@@ -755,7 +771,7 @@
                     </div>
                 </div>
             </div>
-          <!--  <div class="tab__page tab__upsale" data-tab="5">
+           <!-- <div class="tab__page tab__upsale" data-tab="5">
                 <div class="tab__container">
                     <div class="title">
                         Experience our brand-new features with the <span>Premium Combo</span>
@@ -829,7 +845,7 @@
                     </div>
                 </div>
             </div>-->
-            <div class="tab__page tab__download" data-tab="6">
+            <div class="tab__page tab__download" data-tab="5">
                 <div class="tab__container">
                     <div class="tab__download-title">Download the app <br>
                         to continue</div>
@@ -939,6 +955,10 @@
         <div class="btn btn-popup">Try again</div>
     </div>
 </div>
+<div class="loader-container">
+    <div class="loader"></div>
+</div>
+
 
 <script
         src="https://code.jquery.com/jquery-3.7.1.js"
@@ -949,9 +969,9 @@
 <script src="https://cdn.solidgate.com/js/solid-form.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
 <script src="js/amplitude.js"></script>
-<script src="js/main.js"></script>
-<script src="js/user-create.js"></script>
-<script src="js/payment.js"></script>
-<script src="js/upsale.js"></script>
+<script src="js/main.js?v3"></script>
+<script src="js/user-create.js?v3"></script>
+<script src="js/payment.js?v3"></script>
+<script src="js/upsale.js?v3"></script>
 </body>
 </html>

@@ -96,8 +96,10 @@ function postData(product){
           },
           submit_button: {
             'background-color': '#4c61ff',
-            'font-size': '16px',
-            'font-weight': 'bold',
+            'font-size': '17px',
+            'font-weight': '600',
+            "border-radius": "100px",
+            "text-transform": "none",
             ':hover': {
               'background-color': '#5890ff'
             },
@@ -127,7 +129,7 @@ function postData(product){
       let cardExpiryDate = true
 
       formPay.on('interaction', e => {
-        const data = e.data // InteractionMessage
+        const data = e.data ;
         if(data.target.type === "button"){
           amplitude.logEvent('purchase_intent');
           const fieldValues = Object.values(data.cardForm.fields);
@@ -203,8 +205,11 @@ const payButton = document.querySelectorAll(".pay-button");
 
 payButton.forEach((el)=>{
   el.addEventListener('click', function (){
+    $(".loader-container").addClass("active");
     postData("58f1f180-d8c5-489e-b5a6-b6508e8d43ae")
-
+    setTimeout(()=>{
+      $(".loader-container").removeClass("active");
+    },3000)
   });
 })
 
