@@ -60,6 +60,7 @@ const items = document.querySelectorAll('.analyzing__item');
 const lineTrack = document.querySelector('.analyzing__line-track');
 
 function animateLoading() {
+  $(".header").addClass("hide")
   let totalTime = 8000; // Общее время анимации в миллисекундах
   let itemDuration = totalTime / items.length; // Время для каждого элемента
   let width = 0; // Начальная ширина

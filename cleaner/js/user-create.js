@@ -1,4 +1,5 @@
 $("#openEmailTab").on("click", ()=>{
+  $(".header").removeClass("hide")
   switchTab()
   logView("pop_click")
   logView("email_view")

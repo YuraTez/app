@@ -48,6 +48,10 @@ body {
   padding: 14px 0;
 }
 
+.header.hide{
+  display: none;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -755,7 +759,7 @@ body {
 }
 
 .animation-gallery{
-  height: 55vh;
+  height: 460px;
   margin: 8px 0 28px;
 }
 
@@ -816,6 +820,7 @@ body {
   border-radius: 20px;
   background: linear-gradient(180deg, #5890ff 0%, #3b52ff 100%);
   transition: all 0.3s;
+  width: 0;
 }
 
 .popup {
@@ -1319,6 +1324,10 @@ body {
   bottom: 40px;
 }
 
+.pay-description{
+  margin-top: 28px;
+}
+
 .pay-description,
 .pay-description span{
   color: var(--color-text-secondary);
@@ -1331,7 +1340,7 @@ body {
 }
 
 .tab__upsale{
-  padding-top: 34px;
+  padding: 34px 0 40px;
 }
 
 .title span{
@@ -1395,4 +1404,20 @@ body {
   font-size: 13px;
   line-height: 18px;
   letter-spacing: -0.01px;
+}
+
+.link-skip{
+  color: var(--color-text-secondary);
+  text-align: center;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+  margin: 26px 0 38px;
+}
+
+#apple-pay{
+  border-radius: 100px;
 }
