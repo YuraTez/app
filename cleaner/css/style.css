@@ -163,7 +163,7 @@ body {
   background: linear-gradient(180deg, #7da8ff 0%, #4c61ff 100%);
 }
 
-.btn.disable {
+.btn.btn--disabled {
   opacity: 0.5;
   pointer-events: none;
 }
@@ -1306,12 +1306,24 @@ body {
 }
 
 #solid-payment-form-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 28px;
   min-height: 260px;
   margin: 28px 0;
 }
 
 #solid-payment-form-container iframe{
   width: 100%;
+}
+
+#solid-payment-form-container *{
+  order: 0;
+}
+
+#solid-payment-form-container .btn--solid-submit{
+  order: 1;
 }
 
 .tab__download{

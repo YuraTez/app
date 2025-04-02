@@ -92,7 +92,6 @@ function animateLoading() {
 $(".btn-popup").on("click", function(){
   $(".popup").removeClass("active");
   if($(this).closest(".popup-success").length){
-    console.log($(this).closest(".popup-success"))
     switchTab()
   }else{
     const productId = $('.tariff__item-pay:checked').val();

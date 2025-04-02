@@ -70,6 +70,7 @@ function postData(product){
           paymentIntent: data.paymentIntent
         },
         formParams: {
+          allowSubmit: false,
           buttonType: 'default',
           submitButtonText: 'Continue',
           isCardHolderVisible: true,
@@ -115,6 +116,10 @@ function postData(product){
         }
       }
 
+      $("#solid-form-button-submit").on("click", ()=> {
+        formPay.submit()
+      })
+
       const  formPay = PaymentFormSdk.init(initData);
 
       formPay.on('mounted', e => {
@@ -142,6 +147,12 @@ function postData(product){
 
         Object.keys(data.cardForm.fields).forEach(key => {
           const field = data.cardForm.fields[key];
+          const allValid = Object.values(data.cardForm.fields).every(item => item.isValid);
+          if (allValid) {
+            $("#solid-form-button-submit").removeClass("btn--disabled");
+          } else {
+            $("#solid-form-button-submit").addClass("btn--disabled");
+          }
 
           if(key === "cardNumber" && field.isValid && cardNumber){
             amplitude.logEvent('card_field_fill');
@@ -165,7 +176,7 @@ function postData(product){
         setTimeout(function (){
           setCookie('successPay', "true", 90);
           $(".popup-success").addClass("active")
-
+          console.log(e.data , "success ")
           if(e.data.entity === "applebtn"){
             amplitude.logEvent('apple_pay_success');
           }else{
