@@ -14,10 +14,10 @@ function validateEmail() {
   const emailValue = emailInput.val().trim();
   if (emailPattern.test(emailValue)) {
     emailInput.removeClass('error');
-    userCreateButton.removeClass('disable');
+    userCreateButton.removeClass('btn--disabled');
   } else {
     emailInput.addClass('error');
-    userCreateButton.addClass('disable');
+    userCreateButton.addClass('btn--disabled');
   }
 }
 
