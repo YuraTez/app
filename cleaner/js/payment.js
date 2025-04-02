@@ -147,12 +147,7 @@ function postData(product){
 
         Object.keys(data.cardForm.fields).forEach(key => {
           const field = data.cardForm.fields[key];
-          const allValid = Object.values(data.cardForm.fields).every(item => item.isValid);
-          if (allValid) {
-            $("#solid-form-button-submit").removeClass("btn--disabled");
-          } else {
-            $("#solid-form-button-submit").addClass("btn--disabled");
-          }
+          $("#solid-form-button-submit").removeClass("btn--disabled");
 
           if(key === "cardNumber" && field.isValid && cardNumber){
             amplitude.logEvent('card_field_fill');
