@@ -1,4 +1,7 @@
-if(getCookie("userId")){
+if (getCookie("successPay")){
+  $(".tab__page").removeClass("show")
+  $(".tab__upsale").addClass("show");
+} else if(getCookie("userId")){
   $(".tab__page").removeClass("show")
   $(".tab__pay").addClass("show");
 }else{
@@ -118,3 +121,5 @@ function getCookie(name) {
   }
   return undefined;
 }
+
+$("#offerSkip").on("click", switchTab)

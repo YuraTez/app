@@ -52,7 +52,6 @@ function generateUUID() {
 function createUser(){
   const link = new URL(window.location.href);
   const clickId = link.searchParams.get('click_id') !== null ? link.searchParams.get('click_id') : generateUUID(10);
-
   setCookie('userId', clickId, 90);
   setCookie('userEmail', emailInput.val(), 90);
 
@@ -80,7 +79,8 @@ function createUser(){
 
       // Получаем данные из ответа
       const responseData = await response.json();
-      console.log('Success:', responseData);
+      setCookie('userToken', responseData.token, 90);
+      console.log('Success:', responseData.token);
       logView("is_lead")
     } catch (error) {
       console.error('Error:', error);

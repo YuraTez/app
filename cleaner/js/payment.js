@@ -25,19 +25,24 @@ function generateRandomString(length) {
   return result;
 }
 
+const btnPayTemplate = ()=>{
+  return`
+  <div id="solid-form-button-submit" class="btn btn--solid-submit btn--disabled">
+                            Continue
+  </div>
+  `
+}
+
 function postData(product){
+  $("#solid-form-button-submit").remove()
+  $("#solid-payment-form-container").append(btnPayTemplate())
   const link = new URL(window.location.href);
 
-  let clickId
+  let clickId = getCookie("userId")
 
-  if(getCookie()){
-    clickId = getCookie("userId")
-  }else{
-    clickId = link.searchParams.get('click_id') !== null ? link.searchParams.get('click_id') : generateUUID(10);
-  }
 
   const data = {
-    "order_id": generateUUIDString(),
+    "order_id": generateUUIDString().trim(),
     "product_id" : product,
     "order_description": "Premium package",
     "customer_account_id" : clickId ,
@@ -171,7 +176,6 @@ function postData(product){
         setTimeout(function (){
           setCookie('successPay', "true", 90);
           $(".popup-success").addClass("active")
-          console.log(e.data , "success ")
           if(e.data.entity === "applebtn"){
             amplitude.logEvent('apple_pay_success');
           }else{

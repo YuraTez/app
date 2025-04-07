@@ -759,8 +759,7 @@ body {
 }
 
 .animation-gallery{
-  height: 460px;
-  margin: 8px 0 28px;
+  margin: 8px -24px 28px;
 }
 
 .analyzing__list {
