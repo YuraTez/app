@@ -29,7 +29,7 @@ function requestUpsale(product){
 
       const responseData = await response.json();
       console.log('Success:', responseData);
-      sendPostRequest(function (){
+      setTimeout(function (){
         $(".popup-success").addClass("active")
       },1500)
     } catch (error) {
