@@ -759,6 +759,7 @@ body {
 }
 
 .animation-gallery{
+  height: 350px;
   margin: 8px -24px 28px;
 }
 

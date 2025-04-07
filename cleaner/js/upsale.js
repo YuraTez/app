@@ -31,8 +31,9 @@ function requestUpsale(product){
       console.log('Success:', responseData);
       sendPostRequest(function (){
         $(".popup-success").addClass("active")
-      },2000)
+      },1500)
     } catch (error) {
+      $(".popup-error").addClass("active")
       console.error('Error:', error);
     }
   }
@@ -41,8 +42,10 @@ function requestUpsale(product){
 }
 
 $("#btnUpsale").on("click", function() {
+  $(this).addClass('.btn--disabled')
+  setTimeout(()=>{
+    $(this).removeClass('.btn--disabled')
+  },3000)
   const product = $(".tariff__item-upsale:checked").val()
-  console.log('1111' , product)
-  console.log( getCookie("userToken"))
   requestUpsale(product)
 })
