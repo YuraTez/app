@@ -94,7 +94,11 @@ function animateLoading() {
 
 $(".btn-popup").on("click", function(){
   $(".popup").removeClass("active");
-  if($(this).closest(".popup-success").length){
+
+  if($(this).hasClass("applePaySuccess")){
+    $(".tab__page").removeClass("show");
+    $(".tab__download").addClass("show");
+  }else if($(this).closest(".popup-success").length){
     switchTab()
   }else{
     const productId = $('.tariff__item-pay:checked').val();

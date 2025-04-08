@@ -29,9 +29,11 @@ function requestUpsale(product){
 
       const responseData = await response.json();
       console.log('Success:', responseData);
+      $(".loader-container").addClass("active");
       setTimeout(function (){
+        $(".loader-container").removeClass("active");
         $(".popup-success").addClass("active")
-      },1500)
+      },2500)
     } catch (error) {
       $(".popup-error").addClass("active")
       console.error('Error:', error);

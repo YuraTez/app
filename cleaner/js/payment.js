@@ -177,6 +177,7 @@ function postData(product){
           setCookie('successPay', "true", 90);
           $(".popup-success").addClass("active")
           if(e.data.entity === "applebtn"){
+            $(".btn-success").addClass("applePaySuccess");
             amplitude.logEvent('apple_pay_success');
           }else{
             amplitude.logEvent('purchase_success');
