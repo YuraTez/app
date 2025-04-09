@@ -127,3 +127,10 @@ function getCookie(name) {
 }
 
 $("#offerSkip").on("click", switchTab)
+
+function userDay(){
+  setInterval(()=>{
+    let content = +$(".user-today span").text() + 1
+    $(".user-today span").text(content)
+  },4000)
+}

@@ -80,7 +80,6 @@ function createUser(){
       // Получаем данные из ответа
       const responseData = await response.json();
       setCookie('userToken', responseData.token, 90);
-      console.log('Success:', responseData.token);
       logView("is_lead")
     } catch (error) {
       console.error('Error:', error);
@@ -116,6 +115,7 @@ userCreateButton.on('click', ()=>{
   createUser()
   switchTab()
   startCountdown(600)
+  userDay()
   logView("email_click")
   logView("paywall_view")
 

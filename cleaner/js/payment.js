@@ -227,4 +227,5 @@ payButton.forEach((el)=>{
 if(getCookie("userId")){
   postData("58f1f180-d8c5-489e-b5a6-b6508e8d43ae")
   startCountdown(600)
+  userDay()
 }
