@@ -1107,7 +1107,8 @@ body {
 .money-back {
   border-radius: 20px;
   border: 1px solid var(--color-text-white);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.50) 100%), url("../assets/img/guarantee.svg") no-repeat right bottom;"); box-shadow: 0 px 2 px 8 px 0 px rgba(66, 91, 113, 0.15);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.50) 100%), url("../assets/img/guarantee.svg") no-repeat right bottom;");
+  box-shadow: 0 px 2 px 8 px 0 px rgba(66, 91, 113, 0.15);
   padding: 24px 16px;
 }
 
