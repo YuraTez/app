@@ -640,7 +640,7 @@
                     </div>
                     <div class="tariffs">
                         <div class="tariff__item tariff__item-popular">
-                            <input type="radio" class="tariff__item-input tariff__item-pay" name="tariff" value="58f1f180-d8c5-489e-b5a6-b6508e8d43ae" checked id="tariff_1" data-price="plan_changed_1w">
+                            <input type="radio" class="tariff__item-input tariff__item-pay" name="tariff" value="prod_S9BCm7voW7aasB" checked id="tariff_1" data-price="plan_changed_1w">
                             <label for="tariff_1" class="tariff__item-content">
                                 <div class="tariff__item-popular-content">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -675,7 +675,7 @@
                             </label>
                         </div>
                         <div class="tariff__item">
-                            <input type="radio" class="tariff__item-input tariff__item-pay" name="tariff" value="76fe1e82-6f8c-4b78-8d48-508a778edc21" id="tariff_2" data-price="plan_changed_1m">
+                            <input type="radio" class="tariff__item-input tariff__item-pay" name="tariff" value="price_1RGHESJEAmaCVRCydpGmMrSF" id="tariff_2" data-price="plan_changed_1m">
                             <label for="tariff_2" class="tariff__item-content">
                                 <div class="tariff__period">
                                     <div class="tariff__period-data">1 month</div>
@@ -694,7 +694,7 @@
                             </label>
                         </div>
                         <div class="tariff__item">
-                            <input type="radio" class="tariff__item-input tariff__item-pay" name="tariff" value="47304e68-d055-4c02-b123-cd2e249d045f" id="tariff_3" data-price="plan_changed_3m">
+                            <input type="radio" class="tariff__item-input tariff__item-pay" name="tariff" value="price_1RGHEsJEAmaCVRCyyFouq8LT" id="tariff_3" data-price="plan_changed_3m">
                             <label for="tariff_3" class="tariff__item-content">
                                 <div class="tariff__period">
                                     <div class="tariff__period-data">3 month</div>
@@ -772,11 +772,39 @@
                        </div>
                         <p class="pay-card__description">Money-Back Guarantee</p>
                     </div>
-                    <div id="solid-payment-form-container">
-                        <div id="solid-form-button-submit" class="btn btn--solid-submit btn--disabled">
-                            Continue
+                    <form id="payment-form">
+
+                        <!-- Номер карты -->
+                        <div class="form-group">
+                            <label>Card number</label>
+                            <div id="card-number-element"></div>
                         </div>
-                    </div>
+
+                        <div class="form-group-row">
+                            <!-- Expiry date -->
+                            <div class="form-group">
+                                <label>Срок действия</label>
+                                <div id="card-expiry-element"></div>
+                            </div>
+
+                            <!-- CVC/CVV -->
+                            <div class="form-group">
+                                <label>CVC</label>
+                                <div id="card-cvc-element"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Cardholder name</label>
+                            <input type="text" id="card-holder-element" placeholder="JOHN SMITH">
+                        </div>
+
+                        <button id="paymentFormSubmit" class="btn" type="submit">
+                            <div class="spinner hidden" id="spinner"></div>
+                            <span id="button-text" class="button-text">Continue</span>
+                        </button>
+                        <div id="payment-message" class="hidden payment-message"></div>
+                    </form>
 
                     <div class="order-time-info">
                         <div class="user-today">
@@ -996,7 +1024,8 @@
 <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 <script src="https://cdn.solidgate.com/js/solid-form.js"></script>
-<script src="https://js.stripe.com/v3/"></script>
+<!--<script src="https://js.stripe.com/v3/"></script>-->
+<script src="https://js.stripe.com/basil/stripe.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
 <script src="js/amplitude.js"></script>
 <script src="js/main.js?v5"></script>
