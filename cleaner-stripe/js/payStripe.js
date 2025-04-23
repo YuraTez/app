@@ -1,7 +1,7 @@
 /*test product
-
 price_1REvaHJEAmaCVRCybGeh8apl
-
+price_1RGHESJEAmaCVRCydpGmMrSF
+price_1RGHEsJEAmaCVRCyyFouq8LT
 */
 
 const stripe = Stripe("pk_live_51QkRlsJEAmaCVRCyJ4Y7C6owbDCbrBN42WZSR8p0qY9fb0isIRh8r2EmavMAnFBLNxaMnjt9Bbc4hv66MKxI0tMX00F6IEuvTf",{
@@ -57,7 +57,17 @@ async function initialize() {
     });
     cardCvc.mount('#card-cvc-element');
 
-    console.log('1')
+   $(".form-loader").addClass("hide")
+
+    const handleInteraction = () => {
+      $("#paymentFormSubmit").removeClass("btn--disabled")
+    };
+
+    cardNumber.on('focus', handleInteraction);
+    cardExpiry.on('focus', handleInteraction);
+    cardCvc.on('focus', handleInteraction);
+
+
   } catch (error) {
     console.error("Initialization error:", error);
     showMessage("Failed to initialize subscription form");
@@ -105,7 +115,7 @@ async function handleSubmit(e) {
 
     // 2. Сразу подтверждаем платеж на клиенте
     const {clientSecret} = await fetchSubscriptionData();
-
+console.log(clientSecret)
     const { paymentIntent, error: piError } = await stripe.confirmCardPayment(
       clientSecret, // clientSecret из initialize()
       {
